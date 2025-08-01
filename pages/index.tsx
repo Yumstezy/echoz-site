@@ -1,7 +1,7 @@
 // echoz Full Website Page (Hero + Music + Collections + Footer)
 
 import { useEffect, useState, useRef } from 'react';
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 
 export default function HomePage() {
   const [songTitle, setSongTitle] = useState("Echoz Anthem - Brill Trance");
@@ -111,3 +111,4 @@ export default function HomePage() {
     </div>
   );
 }
+

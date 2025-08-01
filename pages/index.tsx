@@ -1,4 +1,4 @@
-// echoz Full Website Page (Hero + Music + Collections + Footer)
+// echoz Full Website Page with Visual Styling Upgrade
 
 import { useEffect, useState, useRef } from 'react';
 import { Button } from "../components/ui/button";
@@ -30,14 +30,19 @@ export default function HomePage() {
   };
 
   useEffect(() => {
-    if (audioRef.current) {
+    if (typeof window !== "undefined" && audioRef.current) {
       audioRef.current.src = songs[currentTrackIndex].file;
       audioRef.current.play();
     }
   }, [currentTrackIndex]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-500 to-fuchsia-600 text-white overflow-x-hidden relative">
+    <div className="min-h-screen bg-gradient-to-br from-pink-500 to-fuchsia-600 text-white overflow-x-hidden relative font-sans">
+
+      {/* Floating Notes */}
+      <img src="/music-note-yellow.png" alt="note" className="absolute top-10 left-4 w-8 animate-pulse" />
+      <img src="/music-note-green.png" alt="note" className="absolute top-20 right-10 w-6 animate-bounce" />
+      <img src="/music-note-purple.png" alt="note" className="absolute bottom-12 left-10 w-7 animate-float" />
 
       {/* Navigation */}
       <nav className="flex justify-between items-center px-8 py-4 backdrop-blur-md bg-white/10 shadow-md text-sm sticky top-0 z-50">
@@ -111,4 +116,3 @@ export default function HomePage() {
     </div>
   );
 }
-
